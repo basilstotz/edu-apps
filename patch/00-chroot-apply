@@ -82,6 +82,7 @@ apply(){
                     echo $P >> error.txt
                 else
                     echo $P >> ok.txt
+		fi
             done
 
 	    
