@@ -77,8 +77,8 @@ apply(){
 
 
 	    for P in $PAKS;do
-                apt-get -y install $P
-                if ! $?;then
+                
+                if ! apt-get -y install $P ;then
                     echo $P >> error.txt
                 else
                     echo $P >> ok.txt
