@@ -67,11 +67,26 @@ apply(){
 	    apt-get update
 	    UPDATED=0
 	    PAKS=""
+
+
+	    
 	    for L in $LISTS;do
 		PAKS="$PAKS $(cat $PFAD/lists.d/$L|xargs) "
 	    done
 	    echo $PAKS | fmt                                                      1>&2
-	    apt-get -y install $PAKS
+
+
+	    for P in $PAKS;do
+                apt-get -y install $P
+                if ! $?;then
+                    echo $P >> error.txt
+                else
+                    echo $P >> ok.txt
+            done
+
+	    
+#	    apt-get -y install $PAKS
+	    
 	    check  "lists"                                                        1>&2
 	fi
 
