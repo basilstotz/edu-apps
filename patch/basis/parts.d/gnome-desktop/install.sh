@@ -8,7 +8,7 @@ cp -r ./extensions/* /usr/share/gnome-shell/extensions/.
 
 FIRST=0
 EXT="["
-for E in /usr/share/gnome-shell/extensions/*; do
+for E in ./extensions/*; do
 
     EB="$(basename $E)"
 
