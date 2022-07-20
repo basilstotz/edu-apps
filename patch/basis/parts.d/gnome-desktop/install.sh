@@ -4,20 +4,24 @@
 
 cd $(dirname $0)
 
-cp ./extensions/* /usr/share/gnome-shell/extensions/.
+cp -r ./extensions/* /usr/share/gnome-shell/extensions/.
 
 FIRST=0
 EXT="["
 for E in /usr/share/gnome-shell/extensions/*; do
+
+    EB="$(basename $E)"
+
     if test $FIRST = 0; then
-        EB="$(basename $E)"
-	FIRST=1
+        FIRST=1
+        EI="'$EB'"
     else
-	EB=",$(basename ${E})"
+        EI=",'$EB'"
     fi
-    EXT= "${EXT}\'${EB}\'"
+    EXT="${EXT}${EI}"
 done
 EXT="${EXT}]"
+
 
 mkdir -p /etc/dconf/db/local.d/
 
