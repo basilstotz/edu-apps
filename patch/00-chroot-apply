@@ -102,7 +102,7 @@ apply(){
 	    for D in $(ls $PFAD/debs.d/*.deb);do
 		 echo $(basename $D)                                              1>&2
 
-		 echo "$(basename $D | cut -f1 -d_ ) " >> /etc/puavo-image/debs.list
+		 #echo "$(basename $D | cut -f1 -d_ ) " >> /etc/puavo-image/debs.list
 
 		 dpkg -i $D
 		 #check
@@ -130,7 +130,7 @@ apply(){
 		if test -x $PFAD/parts.d/$P/install.sh;then
 		     echo -n $P                                                   1>&2
 
-		     echo "$P " >> /etc/puavo-image/parts.list
+		     #echo "$P " >> /etc/puavo-image/parts.list
 
 
 		     $PFAD/parts.d/$P/install.sh
