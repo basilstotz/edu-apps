@@ -27,13 +27,25 @@ EXT="${EXT}]"
 
 mkdir -p /etc/dconf/db/local.d/
 
-cat <<EOF > /etc/dconf/db/local.d/00-enabled-extensions
+cat <<EOF > /dev/null #/etc/dconf/db/local.d/00-enabled-extensions
 [org/gnome/shell]
 # List all extensions that you want to have enabled for all users
 enabled-extensions=${EXT}
 EOF
 
-cat <<EOF > /etc/dconf/db/local.d/01-button-layout
+cat <<EOF > /dev/null #/etc/dconf/db/local.d/01-button-layout
+[org.gnome.desktop.wm.preferences]
+# List all extensions that you want to have enabled for all users
+button-layout='menu:minimize,maximize,spacer,close'
+EOF
+
+cat <<EOF > /etc/dconf/db/user.d/00-enabled-extensions
+[org/gnome/shell]
+# List all extensions that you want to have enabled for all users
+enabled-extensions=${EXT}
+EOF
+
+cat <<EOF > /etc/dconf/db/user.d/01-button-layout
 [org.gnome.desktop.wm.preferences]
 # List all extensions that you want to have enabled for all users
 button-layout='menu:minimize,maximize,spacer,close'
