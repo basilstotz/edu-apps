@@ -2,6 +2,8 @@
 
 #https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/desktop_migration_and_administration_guide/extensions-enable
 
+# knöpfe: org.gnome.desktop.wm.preferences/button-layout
+
 cd $(dirname $0)
 
 cp -r ./extensions/* /usr/share/gnome-shell/extensions/.
@@ -25,11 +27,19 @@ EXT="${EXT}]"
 
 mkdir -p /etc/dconf/db/local.d/
 
-cat <<EOF > /etc/dconf/db/local.d/00-extensions
+cat <<EOF > /etc/dconf/db/local.d/00-enabled-extensions
 [org/gnome/shell]
 # List all extensions that you want to have enabled for all users
 enabled-extensions=${EXT}
 EOF
+
+cat <<EOF > /etc/dconf/db/local.d/01-button-layout
+[org.gnome.desktop.wm.preferences]
+# List all extensions that you want to have enabled for all users
+button-layout='menu:minimize,maximize,spacer,close'
+EOF
+
+
 
 dconf update
 
