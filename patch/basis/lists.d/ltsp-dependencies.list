@@ -1,0 +1,14 @@
+debconf
+zenity
+lxqt-sudo
+dnsmasq
+nfs-kernel-server
+openssh-server
+squashfs-tools
+ethtool
+net-tools
+epoptes
+epoptes-client
+sshfs
+man-db
+wget

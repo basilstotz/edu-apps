@@ -6,7 +6,7 @@
 
 cd $(dirname $0)
 
-cp -r ./extensions/* /usr/share/gnome-shell/extensions/.
+#cp -r ./extensions/* /usr/share/gnome-shell/extensions/.
 
 FIRST=0
 EXT="["

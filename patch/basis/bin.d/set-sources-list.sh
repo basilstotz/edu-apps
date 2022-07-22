@@ -14,3 +14,10 @@ deb-src http://security.debian.org/debian-security/ bullseye-security main contr
 deb http://deb.debian.org/debian bullseye-backports main contrib non-free
 deb-src http://deb.debian.org/debian bullseye-backports main contrib non-free
 EOF
+
+apt update
+
+apt --yes upgrade
+
+apt --yes autoremove
+
