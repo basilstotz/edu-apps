@@ -1,4 +1,4 @@
-#!/nin/sh
+#!/bin/sh
 
 cd $(dirname $0)
 
