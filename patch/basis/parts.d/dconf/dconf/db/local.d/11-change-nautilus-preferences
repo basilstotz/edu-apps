@@ -2,3 +2,6 @@
 executable-text-activation='ask'
 show-create-link=true
 show-delete-permanently=true
+
+[org/gnome/nautilus]
+icon-view='small'
