@@ -1,6 +1,5 @@
 debconf
 zenity
-lxqt-sudo
 dnsmasq
 nfs-kernel-server
 openssh-server
