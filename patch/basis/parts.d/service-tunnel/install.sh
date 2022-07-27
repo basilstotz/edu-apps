@@ -49,5 +49,6 @@ WantedBy=multi-user.target
 EOF
 systemctl enable service-tunnel.service
 
+echo "23 04 * * * root /usr/bin/systemctl restart service-tunnel.service" > /etc/cron.d/service-tunnel-restart
 
 exit
