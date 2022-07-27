@@ -7,7 +7,7 @@ mkdir -p /etc/amxa/tunnel
 chmod 700 /etc/amxa
 mkdir -p /usr/local/bin
 
-cat <<EOF > /usr/local/bin/service-tunnel
+cat <<'EOF' > /usr/local/bin/service-tunnel
 #!/bin/sh
 
 CONFIG="/etc/amxa/tunnel/tunnel.config"
