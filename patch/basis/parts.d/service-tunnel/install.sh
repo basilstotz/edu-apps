@@ -3,21 +3,22 @@
 
 apt-get install autossh
 
-mkdir -p /etc/amxa/tunnel
+mkdir -p /etc/service-tunnel
 chmod 700 /etc/amxa
 mkdir -p /usr/local/bin
 
 cat <<'EOF' > /usr/local/bin/service-tunnel
 #!/bin/sh
 
-CONFIG="/etc/amxa/tunnel/tunnel.config"
+mkdir -p /etc/service-tunnel/
+
+CONFIG="/etc/service-tunnel/tunnel.config"
 
 if test -e ${CONFIG}; then
 
     . ${CONFIG}
 
     chmod 600 ${KEY}
-
     while true; do
 	if ping -c 1  ${HOST} 2>/dev/null >/dev/null; then
             /usr/bin/autossh -M 0 -N -p ${PORT} -i ${KEY} ${OPTS} -R ${REMOTE}:localhost:22 ${USER}@${HOST}
@@ -50,5 +51,7 @@ EOF
 systemctl enable service-tunnel.service
 
 echo "23 04 * * * root /usr/bin/systemctl restart service-tunnel.service" > /etc/cron.d/service-tunnel-restart
+
+
 
 exit
