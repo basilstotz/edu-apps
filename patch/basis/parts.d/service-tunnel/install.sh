@@ -1,10 +1,11 @@
 #!/bin/sh
 
 
-apt-get install autossh
+apt-get --yes install autossh
 
 mkdir -p /etc/service-tunnel
-chmod 700 /etc/amxa
+chmod 700 /etc/service-tunnel
+
 mkdir -p /usr/local/bin
 
 cat <<'EOF' > /usr/local/bin/service-tunnel
