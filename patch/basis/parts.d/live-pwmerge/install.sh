@@ -33,11 +33,11 @@ chmod +x /lib/live/config/0028-pwmerge
 cat <<'EOF' > /usr/local/bin/passwords-save
 #!/bin/bash
 if test -z "$1";then
-   echo "usage: passwords-save <destdir>
+   echo "usage: passwords-save <destdir>"
    exit 1
 fi
 if test "$1" = "--help";then
-   echo "usage: passwords-save <destdir>
+   echo "usage: passwords-save <destdir>"
    exit 0
 fi
 mkdir -p $1
@@ -52,11 +52,11 @@ chmod +x /usr/local/bin/passwords-save
 cat <<'EOF' > /usr/local/bin/passwords-merge
 #!/bin/sh
 if test -z "$1";then
-   echo "usage: passwords-merge <sourcedir>
+   echo "usage: passwords-merge <sourcedir>"
    exit 1
 fi
 if test "$1" = "--help";then
-   echo "usage: passwords-merge <sourcedir>
+   echo "usage: passwords-merge <sourcedir>"
    exit 0
 fi
 if ! test -x /usr/share/ltsp/client/login/pwmerge; then
@@ -74,6 +74,6 @@ fi
 EOF
 chmod +x /usr/local/bin/passwords-merge
 
-sed -e"s/PasswordAuthentication no/PasswordAuthentication yes/g" -i /etc/ssh/sshd_config
+
 
 
