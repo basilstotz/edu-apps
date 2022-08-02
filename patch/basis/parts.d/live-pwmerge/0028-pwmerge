@@ -15,9 +15,9 @@
 
 
 Config (){
-    if test -f /etc/ltsp/login/passwd; then
+    if test -f /home/.login/passwd; then
 	TMP=$(mktemp -d)
-	/usr/share/ltsp/client/login/pwmerge /etc/ltsp/login/ /etc/ $TMP/
+	/usr/share/ltsp/client/login/pwmerge /home/.login/ /etc/ $TMP/
 	cp -a $TMP/* /etc/
 	rm -r $TMP
 
