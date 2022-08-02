@@ -46,7 +46,8 @@ cp -a /etc/passwd $1/passwd
 cp -a /etc/group $1/group
 cp -a /etc/shadow $1/shadow
 test -f /etc/gshadow && cp -a /etc/gshadow $1/gshadow
-EOF 
+EOF
+
 chmod +x /usr/local/bin/passwords-save
 
 cat <<'EOF' > /usr/local/bin/passwords-merge
@@ -60,7 +61,7 @@ if test "$1" = "--help";then
    exit 0
 fi
 if ! test -x /usr/share/ltsp/client/login/pwmerge; then
-    echo "error: dependency \'/usr/share/ltsp/client/login/pwmerge\' is missing"
+    echo "error: dependency '/usr/share/ltsp/client/login/pwmerge' is missing"
     exit 1
 fi
 if test -f $1/passwd; then
@@ -69,7 +70,7 @@ if test -f $1/passwd; then
     cp -a $TMP/* /etc/
     rm -r $TMP
 else
-    echo "error: \'$1\' not found"
+    echo "error: '$1' not found"
 fi
 EOF
 chmod +x /usr/local/bin/passwords-merge
