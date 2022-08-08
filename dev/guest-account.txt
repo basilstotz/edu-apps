@@ -1,0 +1,13 @@
+https://debianforum.de/forum/viewtopic.php?t=164250
+https://github.com/Akrai/systemd-guest-user/blob/master/systemd/system/home-guest.mount
+
+oder
+
+https://manpages.debian.org/jessie/libpam-modules/pam_mkhomedir.8.en.html
+
+
+https://ruderich.org/simon/nsscash/
+
+debian:
+https://github.com/google/libnss-cache
+https://github.com/google/nsscache
