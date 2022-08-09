@@ -2,3 +2,4 @@
 **/*~
 tunnel.key
 .gitignore
+wg0.conf
