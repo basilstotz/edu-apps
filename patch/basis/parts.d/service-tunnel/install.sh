@@ -38,7 +38,7 @@ else
     sleep infinity
 fi
 EOF
-chmod +x /usr/local/bin/service-tunnel
+chmod +x /usr/local/sbin/service-tunnel
 
 
 cat <<EOF > /etc/systemd/system/service-tunnel.service
