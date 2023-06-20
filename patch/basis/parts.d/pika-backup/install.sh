@@ -1,7 +1,7 @@
 #!/bin/sh
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.World.PikaBackup
+flatpak --assumeyes --noninteractive install flathub org.gnome.World.PikaBackup
 
 
 
